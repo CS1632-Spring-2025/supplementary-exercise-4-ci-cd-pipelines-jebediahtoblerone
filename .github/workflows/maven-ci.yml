@@ -96,6 +96,7 @@ jobs:
           path: ~/.sonar/cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
+          
       - name: Cache Maven packages
         uses: actions/cache@v4
         with:
@@ -107,3 +108,4 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=CS1632-Spring-2025_supplementary-exercise-4-ci-cd-pipelines-jebediahtoblerone
   
+
